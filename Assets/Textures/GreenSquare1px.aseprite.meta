@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 88ebd57d34678944887a59ec69d69f77
+guid: daed77b1daa4cee4daa71adefd63b5af
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -98,7 +98,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639203333696720183
+  platformSettingsDirtyTick: 639203343684747975
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -122,7 +122,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: GreenSquare
+  - name: GreenSquare1px
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -133,7 +133,7 @@ ScriptedImporter:
       y: 4
       width: 16
       height: 16
-    spriteID: f513185b08b124145b8a91a1d76183b0
+    spriteID: 464fb8102d4e95d428bb9a1a2ff91b0f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -146,17 +146,17 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 1816222906
+      value0: 2590931447
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: GreenSquare
+    name: GreenSquare1px
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: GreenSquare
+    - name: GreenSquare1px
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -164,7 +164,7 @@ ScriptedImporter:
         y: 0
         width: 16
         height: 16
-      spriteId: f513185b08b124145b8a91a1d76183b0
+      spriteId: 464fb8102d4e95d428bb9a1a2ff91b0f
     linkedCells: []
     parentIndex: -1
   platformSettings:
