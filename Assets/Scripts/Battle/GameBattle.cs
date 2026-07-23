@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameBattle : MonoBehaviour
+public class GameBattle : MonoBehaviour, IWindowInteract
 {
     [Header("Units")]
     public BattleUnit enemyUnit;
     public List<BattleUnit> playerUnits = new List<BattleUnit>();
     public bool battleActive;
 
+    public Window windowScript;
+
     public delegate void GameBattleUpdate();
     public event GameBattleUpdate OnGameBattleStart;
+    public event GameBattleUpdate OnGameBattleWin;
+    public event GameBattleUpdate OnGameBattleLose;
 
 
 
@@ -92,6 +96,7 @@ public class GameBattle : MonoBehaviour
         {
             battleActive = false;
 
+            OnGameBattleWin?.Invoke();
             Debug.Log("Battle Won!");
         }
     }
@@ -104,6 +109,13 @@ public class GameBattle : MonoBehaviour
         }
 
         battleActive = false;
+
+        OnGameBattleLose?.Invoke();
         Debug.Log("Battle Lost!");
+    }
+
+    public void SetWindowScript(Window _windowScript)
+    {
+        windowScript = _windowScript;
     }
 }

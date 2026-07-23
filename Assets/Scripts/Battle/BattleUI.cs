@@ -12,6 +12,9 @@ public class BattleUI : MonoBehaviour
     [SerializeField] private StatBar enemyAttackTimerBar;
     [SerializeField] private RectTransform battleUnitContent;
     [SerializeField] private RectTransform stratagemButtonContent;
+    [SerializeField] private GameObject battleOverPopup;
+    [SerializeField] private TMPro.TMP_Text battleOverText;
+    [SerializeField] private Button battleOverButton;
 
     [Header("Prefabs")]
     [SerializeField] private GameObject battleUnitDisplayObject;
@@ -41,6 +44,12 @@ public class BattleUI : MonoBehaviour
 
             GameObject stratagemButton = Instantiate(stratagemButtonObject, stratagemButtonContent);
         }
+
+        battleOverPopup.SetActive(false);
+
+        gameBattle.OnGameBattleWin += ShowWinPopup;
+        gameBattle.OnGameBattleLose += ShowLosePopup;
+        battleOverButton.onClick.AddListener(() => { gameBattle.windowScript.CloseWindow(); });
     }
 
     private void SetEnemyHealthBar(float _value, float _maxValue)
@@ -51,5 +60,17 @@ public class BattleUI : MonoBehaviour
     private void SetEnemyAttackTimerBar(float _value, float _maxValue)
     {
         enemyAttackTimerBar.SetStatBar(1.0f - (_value / _maxValue));
+    }
+
+    private void ShowWinPopup()
+    {
+        battleOverPopup.SetActive(true);
+        battleOverText.text = "Battle Won";
+    }
+
+    private void ShowLosePopup()
+    {
+        battleOverPopup.SetActive(true);
+        battleOverText.text = "Battle Lost";
     }
 }
