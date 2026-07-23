@@ -319,6 +319,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testWindowContent: {fileID: 3703874751772333694, guid: bbd80906d1d6ae948923689528379615, type: 3}
   battleWindowContent: {fileID: 737085656667512663, guid: 032424f7c2443c54fa8d582aef6e44fb, type: 3}
+  enemyUnit: {fileID: 11400000, guid: c91b75e6fdf5a90449324ee10fb78bd8, type: 2}
+  playerUnits:
+  - {fileID: 11400000, guid: bd3f0d6663c605e47b95a9c3e734579a, type: 2}
+  - {fileID: 11400000, guid: bd3f0d6663c605e47b95a9c3e734579a, type: 2}
+  - {fileID: 11400000, guid: bd3f0d6663c605e47b95a9c3e734579a, type: 2}
+  - {fileID: 11400000, guid: bd3f0d6663c605e47b95a9c3e734579a, type: 2}
 --- !u!1 &1082272637
 GameObject:
   m_ObjectHideFlags: 0

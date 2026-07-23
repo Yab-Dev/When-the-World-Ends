@@ -7,6 +7,8 @@ public class Unit : ScriptableObject
 {
     [Header("Data")]
     public new string name;
+    public bool isFlyingUnit;
+    public bool targetsFlyingUnits;
 
     [Header("Visuals")]
     public Sprite icon;

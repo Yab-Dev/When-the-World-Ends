@@ -19,4 +19,9 @@ public class Window : MonoBehaviour
     {
         _content.transform.SetParent(windowContent);
     }
+
+    public GameObject GetWindowContent()
+    {
+        return windowContent.GetChild(0).gameObject;
+    }
 }

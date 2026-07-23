@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 538ad67fd069fa34399362c8dd2ffa4a, type: 3}
-  m_Name: Soldier
+  m_Name: Super Soldier
   m_EditorClassIdentifier: 
-  name: Soldier
+  name: Super Soldier
   isFlyingUnit: 0
   targetsFlyingUnits: 0
   icon: {fileID: 7482667652216324306, guid: f2ebf832e2b040f4ca148a5bc31be737, type: 3}
-  health: 10
-  damage: 5
-  speed: 2
+  health: 100
+  damage: 8
+  speed: 3
