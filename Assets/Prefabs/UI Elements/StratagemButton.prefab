@@ -85,6 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 374371933306198793}
   - component: {fileID: 8898949109241500554}
+  - component: {fileID: -5105326901940667262}
   - component: {fileID: 761395905419345738}
   - component: {fileID: 6210830641615286664}
   m_Layer: 5
@@ -122,6 +123,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992809000641446798}
   m_CullTransparentMesh: 1
+--- !u!114 &-5105326901940667262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992809000641446798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3eede862239d3b49a85bfb9d58cf5e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 6210830641615286664}
+  fillImage: {fileID: 761395905419345738}
+  stratagemIcon: {fileID: 4817832464861065206}
 --- !u!114 &761395905419345738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +159,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: -3110492467740097303, guid: daed77b1daa4cee4daa71adefd63b5af, type: 3}
-  m_Type: 1
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

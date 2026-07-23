@@ -9,6 +9,7 @@ public class Unit : ScriptableObject
     public new string name;
     public bool isFlyingUnit;
     public bool targetsFlyingUnits;
+    public Stratagem stratagem;
 
     [Header("Visuals")]
     public Sprite icon;

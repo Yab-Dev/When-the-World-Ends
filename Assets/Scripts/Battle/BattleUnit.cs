@@ -6,6 +6,8 @@ using UnityEngine;
 public class BattleUnit
 {
     public Unit baseUnit;
+    public BattleStratagem battleStratagem;
+
     private int health;
     private int Health 
     { 
@@ -19,6 +21,7 @@ public class BattleUnit
             OnBattleUnitHealthChange?.Invoke(health, baseUnit.health);
         } 
     }
+
     private float attackTimer;
     private float AttackTimer
     {
@@ -56,6 +59,8 @@ public class BattleUnit
         isEnemy = _isEnemy;
 
         gameBattle = _battle;
+
+        battleStratagem = new BattleStratagem(_unit.stratagem, this, gameBattle);
     }
 
     public BattleUnit SetTarget(List<BattleUnit> _targets)
@@ -112,6 +117,9 @@ public class BattleUnit
 
         AttackTimer -= Time.deltaTime;
         OnBattleUnitAttackTimerChange?.Invoke(AttackTimer, baseUnit.speed);
+
+        battleStratagem.Tick();
+
         if (AttackTimer <= 0.0f)
         {
             Attack();
@@ -130,6 +138,7 @@ public class BattleUnit
         }
 
         target.Damage(baseUnit.damage);
+        battleStratagem.UnitAttack();
     }
 
     public void Damage(int _amount)

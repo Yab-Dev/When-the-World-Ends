@@ -9,14 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 538ad67fd069fa34399362c8dd2ffa4a, type: 3}
-  m_Name: Super Soldier
+  m_Script: {fileID: 11500000, guid: 94f32d28025cadf43944e1753b9745e7, type: 3}
+  m_Name: Burst Fire
   m_EditorClassIdentifier: 
-  name: Super Soldier
-  isFlyingUnit: 0
-  targetsFlyingUnits: 0
-  stratagem: {fileID: 11400000, guid: 1f062e26b4ddd1940a757bb548261838, type: 2}
+  name: Burst Fire
   icon: {fileID: 7482667652216324306, guid: f2ebf832e2b040f4ca148a5bc31be737, type: 3}
-  health: 100
-  damage: 8
-  speed: 3
+  chargeMax: 100
+  chargePerSecond: 10
+  chargePerAttack: 10
+  damage: 15

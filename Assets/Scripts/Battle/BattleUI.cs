@@ -38,11 +38,19 @@ public class BattleUI : MonoBehaviour
             GameObject battleUnitDisplay = Instantiate(battleUnitDisplayObject, battleUnitContent);
             BattleUnitDisplayUI battleUnitDisplayUI = battleUnitDisplay.GetComponent<BattleUnitDisplayUI>();
 
-            battleUnitDisplayUI.SetIcon(enemyIcon);
+            battleUnitDisplayUI.SetIcon(playerUnit.baseUnit.icon);
             playerUnit.OnBattleUnitHealthChange += battleUnitDisplayUI.SetHealthBar;
             playerUnit.OnBattleUnitAttackTimerChange += battleUnitDisplayUI.SetAttackTimerBar;
 
             GameObject stratagemButton = Instantiate(stratagemButtonObject, stratagemButtonContent);
+            StratagemButtonUI stratagemButtonUI = stratagemButton.GetComponent<StratagemButtonUI>();
+
+            stratagemButtonUI.SetIcon(playerUnit.baseUnit.stratagem.icon);
+            playerUnit.battleStratagem.OnBattleStratagemChargeAmountChange += stratagemButtonUI.SetButtonFillLevel;
+            gameBattle.OnGameBattleWin += stratagemButtonUI.DeactivateButton;
+            gameBattle.OnGameBattleLose += stratagemButtonUI.DeactivateButton;
+            stratagemButtonUI.SetButtonListener(playerUnit.battleStratagem.Use);
+            stratagemButtonUI.SetButtonActive(false);
         }
 
         battleOverPopup.SetActive(false);

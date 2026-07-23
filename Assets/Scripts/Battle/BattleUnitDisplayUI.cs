@@ -12,9 +12,9 @@ public class BattleUnitDisplayUI : MonoBehaviour
 
 
 
-    public void SetIcon(Image _icon)
+    public void SetIcon(Sprite _icon)
     {
-        unitIcon = _icon;
+        unitIcon.sprite = _icon;
     }
 
     public void SetHealthBar(float _value, float _maxValue)
