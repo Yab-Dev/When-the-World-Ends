@@ -56,6 +56,7 @@ MonoBehaviour:
   generationLength: 0
   stationedUnits: []
   influence: 0
+  worldZoneInfoWindow: {fileID: 1202757245087983415, guid: afae12fcda857344c80f3a2033b56051, type: 3}
 --- !u!222 &7101009339403210551
 CanvasRenderer:
   m_ObjectHideFlags: 0

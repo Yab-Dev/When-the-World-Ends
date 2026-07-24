@@ -21,12 +21,6 @@ public class UnitSelectorUI : MonoBehaviour
 
 
 
-    [SerializeField] private List<Unit> DEBUGSTARTINGUNITS = new List<Unit>();
-    private void Start()
-    {
-        InitializeUnitSelector(DEBUGSTARTINGUNITS, 5);
-    }
-
     public void InitializeUnitSelector(List<Unit> _stationedUnits, int _selectedCap)
     {
         selectedCap = _selectedCap;

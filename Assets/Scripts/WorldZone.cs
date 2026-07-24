@@ -16,10 +16,18 @@ public class WorldZone : MonoBehaviour, IPointerDownHandler
     public List<Unit> stationedUnits = new List<Unit>();
     public int influence;
 
+    [Header("Prefabs")]
+    [SerializeField] private GameObject worldZoneInfoWindow;
 
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log(zoneName);
+        Window window = WindowManager.Instance.CreateWindow(zoneName, worldZoneInfoWindow, new Vector2(-130, -50));
+        window.GetWindowContent().GetComponent<WorldZoneInfoWindow>().InitializeUI(this);
+    }
+
+    public void StartGame()
+    {
+        stationedUnits.Add(generatedUnit);
     }
 }

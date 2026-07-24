@@ -66,6 +66,11 @@ public class GameManager : MonoBehaviour
         WindowManager.Instance.CreateWindow("Doomsday Clock", doomsdayTimerWindowContent, new Vector2(0, 80));
         WindowManager.Instance.CreateWindow("Stats", playerStatsWindowContent, new Vector2(-170, 100));
         StartBattle(testBattle, playerUnits, zones[0]);
+
+        foreach (WorldZone zone in zones)
+        {
+            zone.StartGame();
+        }
     }
 
     public int GetTotalInfluence()
