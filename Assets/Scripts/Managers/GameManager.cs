@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject testWindowContent;
     [SerializeField] private GameObject battleWindowContent;
     [SerializeField] private GameObject doomsdayTimerWindowContent;
+    [SerializeField] private GameObject playerStatsWindowContent;
     [SerializeField] private BattleEvent testBattle;
     [SerializeField] private List<Unit> playerUnits = new List<Unit>();
 
@@ -65,6 +66,17 @@ public class GameManager : MonoBehaviour
 
         WindowManager.Instance.CreateWindow("When the World Ends", testWindowContent, Vector2.zero);
         WindowManager.Instance.CreateWindow("Doomsday Clock", doomsdayTimerWindowContent, new Vector2(0, 80));
+        WindowManager.Instance.CreateWindow("Stats", playerStatsWindowContent, new Vector2(-170, 100));
         StartBattle(testBattle, playerUnits, zones[0]);
+    }
+
+    public int GetTotalInfluence()
+    {
+        int total = 0;
+        foreach (WorldZone zone in zones)
+        {
+            total += zone.influence;
+        }
+        return total;
     }
 }
