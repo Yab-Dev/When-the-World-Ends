@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class WorldZoneInfoWindow : MonoBehaviour, IWindowInteract
 {
@@ -36,9 +37,10 @@ public class WorldZoneInfoWindow : MonoBehaviour, IWindowInteract
     {
         zone = _zone;
 
-        influenceText.text = $"Influence: {_zone.influence}";
+        SetInfluenceText(_zone.Influence);
+        _zone.OnWorldZoneInfluenceUpdate += SetInfluenceText;
 
-        unitSelector.InitializeUnitSelector(_zone.stationedUnits, 8);
+        unitSelector.InitializeUnitSelector(_zone.GetStationedUnits(), 8, _zone);
 
         exitButton.onClick.AddListener(windowScript.CloseWindow);
 
@@ -76,9 +78,14 @@ public class WorldZoneInfoWindow : MonoBehaviour, IWindowInteract
         transferWindow.GetWindowContent().GetComponent<UnitTransferWindow>().BeginLoadingBar(unitSelector.GetSelectedUnits(), destinationZone, 3.0f);
         foreach (Unit unit in unitSelector.GetSelectedUnits())
         {
-            zone.stationedUnits.Remove(unit);
+            zone.RemoveUnit(unit);
         }
 
         windowScript.CloseWindow();
+    }
+
+    private void SetInfluenceText(int _influence)
+    {
+        influenceText.text = $"Influence: {_influence}";
     }
 }

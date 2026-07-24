@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
         int total = 0;
         foreach (WorldZone zone in zones)
         {
-            total += zone.influence;
+            total += zone.Influence;
         }
         return total;
     }

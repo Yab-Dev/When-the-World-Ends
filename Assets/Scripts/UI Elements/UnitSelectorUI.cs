@@ -20,26 +20,43 @@ public class UnitSelectorUI : MonoBehaviour
     private List<Unit> selectedUnits = new List<Unit>();
 
 
+    private WorldZone updater;
 
-    public void InitializeUnitSelector(List<Unit> _stationedUnits, int _selectedCap)
+    public void InitializeUnitSelector(List<Unit> _stationedUnits, int _selectedCap, WorldZone autoUpdater = null)
     {
         selectedCap = _selectedCap;
         stationedUnits.AddRange(_stationedUnits);
 
+        if (autoUpdater != null)
+        {
+            autoUpdater.OnWorldZoneUnitUpdate += UpdateUnits;
+        }
+        updater = autoUpdater;
+
         UpdateSelectorUI();
+    }
+
+    private void OnDisable()
+    {
+        if (updater != null)
+        {
+            updater.OnWorldZoneUnitUpdate -= UpdateUnits;
+        }
     }
 
     public void UpdateSelectorUI()
     {
         selectLabelText.text = $"Select Units (Up to {selectedCap}):";
 
-        foreach (Transform child in stationedUnitsContent)
+        for (int i = stationedUnitsContent.childCount - 1; i >= 0; i--)
         {
-            Destroy(child.gameObject);
+            Transform child = stationedUnitsContent.GetChild(i);
+            if (child != null) { Destroy(child.gameObject); }
         }
-        foreach (Transform child in selectedUnitsContent)
+        for (int i = selectedUnitsContent.childCount - 1; i >= 0; i--)
         {
-            Destroy(child.gameObject);
+            Transform child = selectedUnitsContent.GetChild(i);
+            if (child != null) { Destroy(child.gameObject); }
         }
 
         Dictionary<Unit, StationedUnitUI> uniqueUnits = new Dictionary<Unit, StationedUnitUI>();
@@ -94,5 +111,25 @@ public class UnitSelectorUI : MonoBehaviour
     public List<Unit> GetSelectedUnits()
     {
         return selectedUnits;
+    }
+
+    private void UpdateUnits(List<Unit> _stationedUnits)
+    {
+        List<Unit> newUnits = new List<Unit>();
+        newUnits.AddRange(_stationedUnits);
+        List<Unit> newStationedUnits = new List<Unit>();
+        List<Unit> newSelectedUnits = new List<Unit>();
+
+        foreach (Unit unit in selectedUnits)
+        {
+            newSelectedUnits.Add(unit);
+            newUnits.Remove(unit);
+        }
+        newStationedUnits.AddRange(newUnits);
+
+        stationedUnits = newStationedUnits;
+        selectedUnits = newSelectedUnits;
+
+        UpdateSelectorUI();
     }
 }

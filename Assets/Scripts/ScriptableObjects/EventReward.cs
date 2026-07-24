@@ -18,8 +18,11 @@ public class EventReward
         GameManager.Instance.doomsdayTimer += timeReward;
         GameManager.Instance.morale += moraleReward;
 
-        _zone.influence += influenceReward;
-        _zone.stationedUnits.AddRange(unitReward);
+        _zone.Influence += influenceReward;
+        foreach (Unit unit in unitReward)
+        {
+            _zone.AddUnit(unit);
+        }
 
         WindowManager.Instance.CreateRewardsWindow("Rewards", Vector2.zero, this);
     }

@@ -35,7 +35,10 @@ public class UnitTransferWindow : MonoBehaviour, IWindowInteract
             loadingBarFill.fillAmount = loadingTime / totalLoadingTime;
             if (loadingTime >= totalLoadingTime)
             {
-                destination.stationedUnits.AddRange(transferringUnits);
+                foreach (Unit unit in transferringUnits)
+                {
+                    destination.AddUnit(unit);
+                }
                 windowScript.CloseWindow();
             }
         }

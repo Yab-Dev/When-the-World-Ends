@@ -13,12 +13,48 @@ public class WorldZone : MonoBehaviour, IPointerDownHandler
     public float generationLength;
 
     [Header("Zone Data")]
-    public List<Unit> stationedUnits = new List<Unit>();
-    public int influence;
+    private List<Unit> stationedUnits = new List<Unit>();
+    private List<Unit> StationedUnits
+    {
+        get
+        {
+            return stationedUnits;
+        }
+        set
+        {
+            stationedUnits = value;
+            OnWorldZoneUnitUpdate?.Invoke(stationedUnits);
+        }
+    }
+    private int influence;
+    public int Influence
+    {
+        get
+        {
+            return influence;
+        }
+        set
+        {
+            influence = value;
+            OnWorldZoneInfluenceUpdate?.Invoke(influence);
+        }
+    }
 
     [Header("Prefabs")]
     [SerializeField] private GameObject worldZoneInfoWindow;
 
+    public delegate void WorldZoneUnitUpdate(List<Unit> _stationedUnits);
+    public event WorldZoneUnitUpdate OnWorldZoneUnitUpdate;
+
+    public delegate void WorldZoneStatUpdate(int _stat);
+    public event WorldZoneStatUpdate OnWorldZoneInfluenceUpdate;
+
+
+
+    private void Awake()
+    {
+        StationedUnits = new List<Unit>();
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -28,6 +64,23 @@ public class WorldZone : MonoBehaviour, IPointerDownHandler
 
     public void StartGame()
     {
-        stationedUnits.Add(generatedUnit);
+        StationedUnits.Add(generatedUnit);
+    }
+
+    public void AddUnit(Unit _unit)
+    {
+        StationedUnits.Add(_unit);
+        OnWorldZoneUnitUpdate?.Invoke(stationedUnits);
+    }
+
+    public void RemoveUnit(Unit _unit)
+    {
+        StationedUnits.Remove(_unit);
+        OnWorldZoneUnitUpdate?.Invoke(stationedUnits);
+    }
+
+    public List<Unit> GetStationedUnits()
+    {
+        return StationedUnits;
     }
 }
