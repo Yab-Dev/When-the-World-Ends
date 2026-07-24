@@ -6,11 +6,17 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [Header("Gameplay Data")]
+    [SerializeField] public float doomsdayTimer;
+
     [Header("Prefabs")]
     [SerializeField] private GameObject testWindowContent;
     [SerializeField] private GameObject battleWindowContent;
+    [SerializeField] private GameObject doomsdayTimerWindowContent;
     [SerializeField] private Unit enemyUnit;
     [SerializeField] private List<Unit> playerUnits = new List<Unit>();
+
+    private bool isGameStarted = false;
 
 
 
@@ -21,9 +27,15 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        WindowManager.Instance.CreateWindow("When the World Ends", testWindowContent, Vector2.zero);
+        StartGame();
+    }
 
-        StartBattle(enemyUnit, playerUnits);
+    private void Update()
+    {
+        if (isGameStarted)
+        {
+            doomsdayTimer -= Time.deltaTime;
+        }
     }
 
     public void StartBattle(Unit _enemyUnit, List<Unit> _playerUnits)
@@ -38,5 +50,13 @@ public class GameManager : MonoBehaviour
         }
 
         gameBattle.StartBattle();
+    }
+
+    public void StartGame()
+    {
+        isGameStarted = true;
+        WindowManager.Instance.CreateWindow("When the World Ends", testWindowContent, Vector2.zero);
+        WindowManager.Instance.CreateWindow("Doomsday Clock", doomsdayTimerWindowContent, new Vector2(0, 80));
+        StartBattle(enemyUnit, playerUnits);
     }
 }
