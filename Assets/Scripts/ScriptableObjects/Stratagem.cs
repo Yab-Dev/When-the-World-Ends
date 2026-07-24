@@ -6,6 +6,7 @@ public abstract class Stratagem : ScriptableObject
 {
     [Header("Data")]
     public new string name;
+    public string description;
 
     [Header("Visuals")]
     public Sprite icon;
