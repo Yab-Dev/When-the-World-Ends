@@ -10,6 +10,7 @@ public class Unit : ScriptableObject
     public bool isFlyingUnit;
     public bool targetsFlyingUnits;
     public Stratagem stratagem;
+    public int unitStrength;
 
     [Header("Visuals")]
     public Sprite icon;

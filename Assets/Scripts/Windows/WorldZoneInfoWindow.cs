@@ -10,6 +10,8 @@ public class WorldZoneInfoWindow : MonoBehaviour, IWindowInteract
 
     [Header("Cache")]
     [SerializeField] private TMPro.TMP_Text influenceText;
+    [SerializeField] private TMPro.TMP_Text generatedUnitText;
+    [SerializeField] private StatBar generatedUnitBar;
     [SerializeField] private UnitSelectorUI unitSelector;
     [SerializeField] private Button exitButton;
     [SerializeField] private TMPro.TMP_Dropdown unitDestinationDropdown;
@@ -33,12 +35,20 @@ public class WorldZoneInfoWindow : MonoBehaviour, IWindowInteract
         Instance = this;
     }
 
+    private void OnDisable()
+    {
+        zone.OnWorldZoneUnitLoadUpdate -= SetLoadingBar;
+    }
+
     public void InitializeUI(WorldZone _zone)
     {
         zone = _zone;
 
         SetInfluenceText(_zone.Influence);
         _zone.OnWorldZoneInfluenceUpdate += SetInfluenceText;
+
+        generatedUnitText.text = $"Generated Unit: {_zone.generatedUnit.name}";
+        _zone.OnWorldZoneUnitLoadUpdate += SetLoadingBar;
 
         unitSelector.InitializeUnitSelector(_zone.GetStationedUnits(), 8, _zone);
 
@@ -87,5 +97,10 @@ public class WorldZoneInfoWindow : MonoBehaviour, IWindowInteract
     private void SetInfluenceText(int _influence)
     {
         influenceText.text = $"Influence: {_influence}";
+    }
+
+    private void SetLoadingBar(float _value, float _maxValue)
+    {
+        generatedUnitBar.SetStatBar(_value / _maxValue);
     }
 }

@@ -139,6 +139,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: bd3f0d6663c605e47b95a9c3e734579a, type: 2}
     - target: {fileID: 2345859211226512796, guid: 9510905894bdfb84da51f671e00c135e, type: 3}
+      propertyPath: generationLength
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2345859211226512796, guid: 9510905894bdfb84da51f671e00c135e, type: 3}
       propertyPath: connectedZones.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -762,6 +766,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: bd3f0d6663c605e47b95a9c3e734579a, type: 2}
     - target: {fileID: 2345859211226512796, guid: 9510905894bdfb84da51f671e00c135e, type: 3}
+      propertyPath: generationLength
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2345859211226512796, guid: 9510905894bdfb84da51f671e00c135e, type: 3}
       propertyPath: connectedZones.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -1050,6 +1058,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: bd3f0d6663c605e47b95a9c3e734579a, type: 2}
     - target: {fileID: 2345859211226512796, guid: 9510905894bdfb84da51f671e00c135e, type: 3}
+      propertyPath: generationLength
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2345859211226512796, guid: 9510905894bdfb84da51f671e00c135e, type: 3}
       propertyPath: connectedZones.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1182,6 +1194,10 @@ PrefabInstance:
       propertyPath: generatedUnit
       value: 
       objectReference: {fileID: 11400000, guid: bd3f0d6663c605e47b95a9c3e734579a, type: 2}
+    - target: {fileID: 2345859211226512796, guid: 9510905894bdfb84da51f671e00c135e, type: 3}
+      propertyPath: generationLength
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 2345859211226512796, guid: 9510905894bdfb84da51f671e00c135e, type: 3}
       propertyPath: connectedZones.Array.size
       value: 4
@@ -1358,6 +1374,10 @@ PrefabInstance:
       propertyPath: generatedUnit
       value: 
       objectReference: {fileID: 11400000, guid: bd3f0d6663c605e47b95a9c3e734579a, type: 2}
+    - target: {fileID: 2345859211226512796, guid: 9510905894bdfb84da51f671e00c135e, type: 3}
+      propertyPath: generationLength
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 2345859211226512796, guid: 9510905894bdfb84da51f671e00c135e, type: 3}
       propertyPath: connectedZones.Array.size
       value: 3
@@ -1691,6 +1711,10 @@ PrefabInstance:
       propertyPath: generatedUnit
       value: 
       objectReference: {fileID: 11400000, guid: bd3f0d6663c605e47b95a9c3e734579a, type: 2}
+    - target: {fileID: 2345859211226512796, guid: 9510905894bdfb84da51f671e00c135e, type: 3}
+      propertyPath: generationLength
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 2345859211226512796, guid: 9510905894bdfb84da51f671e00c135e, type: 3}
       propertyPath: connectedZones.Array.size
       value: 1
