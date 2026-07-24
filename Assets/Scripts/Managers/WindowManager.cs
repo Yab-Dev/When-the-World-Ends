@@ -8,6 +8,7 @@ public class WindowManager : MonoBehaviour
 
     [Header("Prefabs")]
     [SerializeField] private GameObject windowObject;
+    [SerializeField] private GameObject rewardsWindow;
 
     private RectTransform windowsParent;
 
@@ -31,5 +32,14 @@ public class WindowManager : MonoBehaviour
         newWindow.transform.localPosition = _position;
 
         return windowScript;
+    }
+
+    public Window CreateRewardsWindow(string _windowName, Vector2 _position, EventReward _reward)
+    {
+        Window newWindow = CreateWindow(_windowName, rewardsWindow, _position);
+
+        newWindow.GetWindowContent().GetComponent<RewardsWindowUI>().DisplayReward(_reward);
+
+        return newWindow;
     }
 }

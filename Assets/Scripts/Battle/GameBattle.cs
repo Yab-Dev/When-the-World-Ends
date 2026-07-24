@@ -11,6 +11,11 @@ public class GameBattle : MonoBehaviour, IWindowInteract
 
     public Window windowScript;
 
+    private EventReward winReward;
+    private EventReward loseReward;
+
+    private WorldZone zone;
+
     public delegate void GameBattleUpdate();
     public event GameBattleUpdate OnGameBattleStart;
     public event GameBattleUpdate OnGameBattleWin;
@@ -48,6 +53,17 @@ public class GameBattle : MonoBehaviour, IWindowInteract
         BattleUnit playerUnit = new BattleUnit(_playerUnit, false, this);
         playerUnit.OnBattleUnitDeath += CheckForEnemyWin;
         playerUnits.Add(playerUnit);
+    }
+
+    public void SetRewards(EventReward _winReward, EventReward _loseReward)
+    {
+        winReward = _winReward;
+        loseReward = _loseReward;
+    }
+
+    public void SetZone(WorldZone _zone)
+    {
+        zone = _zone;
     }
 
     public void StartBattle()
@@ -96,8 +112,9 @@ public class GameBattle : MonoBehaviour, IWindowInteract
         {
             battleActive = false;
 
+            winReward.RedeemReward(zone);
+
             OnGameBattleWin?.Invoke();
-            Debug.Log("Battle Won!");
         }
     }
 
@@ -110,8 +127,9 @@ public class GameBattle : MonoBehaviour, IWindowInteract
 
         battleActive = false;
 
+        loseReward.RedeemReward(zone);
+
         OnGameBattleLose?.Invoke();
-        Debug.Log("Battle Lost!");
     }
 
     public void SetWindowScript(Window _windowScript)

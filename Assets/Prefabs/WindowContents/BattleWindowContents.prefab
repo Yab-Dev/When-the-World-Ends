@@ -71,6 +71,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyUnit:
     baseUnit: {fileID: 0}
+    battleStratagem:
+      baseStratagem: {fileID: 0}
     isDead: 0
   playerUnits: []
   battleActive: 0
@@ -694,7 +696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 681372799239060010, guid: c9edb54d7badcbd408b616e10bc830f5, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 19.744999
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 681372799239060010, guid: c9edb54d7badcbd408b616e10bc830f5, type: 3}
       propertyPath: m_LocalPosition.x
