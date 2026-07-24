@@ -9,6 +9,7 @@ public class WorldZone : MonoBehaviour, IPointerDownHandler
     [Header("Zone Data (DESIGNER ENTER DATA HERE)")]
     public string zoneName;
     public List<WorldZone> connectedZones = new List<WorldZone>();
+    public List<GameObject> battleEncounterSpawnLocations = new List<GameObject>();
     public Unit generatedUnit;
     public float generationLength;
     private float generationTimer;

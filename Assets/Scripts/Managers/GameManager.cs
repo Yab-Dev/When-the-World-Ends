@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour
         {
             zone.StartGame();
         }
+        BattleEncounterSpawnerManager.Instance.StartGame();
 
         yield return new WaitForSeconds(1.0f);
 
