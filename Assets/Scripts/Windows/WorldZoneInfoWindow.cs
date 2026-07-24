@@ -14,6 +14,9 @@ public class WorldZoneInfoWindow : MonoBehaviour, IWindowInteract
     [SerializeField] private TMPro.TMP_Dropdown unitDestinationDropdown;
     [SerializeField] private Button moveUnitsButton;
 
+    [Header("Prefab")]
+    [SerializeField] private GameObject unitTransferWindow;
+
     private Window windowScript;
     private WorldZone zone;
 
@@ -69,7 +72,8 @@ public class WorldZoneInfoWindow : MonoBehaviour, IWindowInteract
         }
         if (destinationZone == null) { return; }
 
-        destinationZone.stationedUnits.AddRange(unitSelector.GetSelectedUnits());
+        Window transferWindow = WindowManager.Instance.CreateWindow("Transferring Units", unitTransferWindow, Vector2.zero);
+        transferWindow.GetWindowContent().GetComponent<UnitTransferWindow>().BeginLoadingBar(unitSelector.GetSelectedUnits(), destinationZone, 3.0f);
         foreach (Unit unit in unitSelector.GetSelectedUnits())
         {
             zone.stationedUnits.Remove(unit);

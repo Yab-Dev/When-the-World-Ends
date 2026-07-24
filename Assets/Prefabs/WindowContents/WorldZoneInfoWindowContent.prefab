@@ -60,6 +60,7 @@ MonoBehaviour:
   exitButton: {fileID: 7005706935517121786}
   unitDestinationDropdown: {fileID: 8021168210560604060}
   moveUnitsButton: {fileID: 5576795518914648665}
+  unitTransferWindow: {fileID: 1772886780535469529, guid: 89d6d3b15ea81cd458f726ae44466296, type: 3}
 --- !u!222 &1041247237445032126
 CanvasRenderer:
   m_ObjectHideFlags: 0
