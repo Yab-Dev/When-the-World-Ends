@@ -11,13 +11,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] public float morale;
     [SerializeField] public List<WorldZone> zones = new List<WorldZone>();
 
+    [Header("Cache")]
+    [SerializeField] private GameObject border;
+    [SerializeField] private GameObject worldMap;
+
     [Header("Prefabs")]
-    [SerializeField] private GameObject testWindowContent;
+    [SerializeField] private GameObject mainMenuWindowContent;
     [SerializeField] private GameObject battleWindowContent;
     [SerializeField] private GameObject doomsdayTimerWindowContent;
     [SerializeField] private GameObject playerStatsWindowContent;
-    [SerializeField] private BattleEvent testBattle;
-    [SerializeField] private List<Unit> playerUnits = new List<Unit>();
 
     private bool isGameStarted = false;
 
@@ -30,7 +32,10 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        StartGame();
+        border.SetActive(false);
+        worldMap.SetActive(false);
+
+        StartCoroutine(IntroAnimation());
     }
 
     private void Update()
@@ -58,19 +63,38 @@ public class GameManager : MonoBehaviour
         gameBattle.StartBattle();
     }
 
-    public void StartGame()
+    public IEnumerator IntroAnimation()
     {
-        isGameStarted = true;
+        yield return new WaitForSeconds(1.0f);
 
-        WindowManager.Instance.CreateWindow("When the World Ends", testWindowContent, Vector2.zero);
-        WindowManager.Instance.CreateWindow("Doomsday Clock", doomsdayTimerWindowContent, new Vector2(0, 80));
+        border.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+
+        WindowManager.Instance.CreateWindow("When the World Ends", mainMenuWindowContent, Vector2.zero);
+    }
+
+    public IEnumerator StartGame()
+    {
+        yield return new WaitForSeconds(2.0f);
+
         WindowManager.Instance.CreateWindow("Stats", playerStatsWindowContent, new Vector2(-170, 100));
-        StartBattle(testBattle, playerUnits, zones[0]);
+        yield return new WaitForSeconds(1.0f);
+
+        isGameStarted = true;
+        WindowManager.Instance.CreateWindow("Doomsday Clock", doomsdayTimerWindowContent, new Vector2(0, 80));
 
         foreach (WorldZone zone in zones)
         {
             zone.StartGame();
         }
+
+        yield return new WaitForSeconds(1.0f);
+
+        worldMap.SetActive(true);
+
+        yield return new WaitForSeconds(2.0f);
+
+        // Start of game radio event
     }
 
     public int GetTotalInfluence()

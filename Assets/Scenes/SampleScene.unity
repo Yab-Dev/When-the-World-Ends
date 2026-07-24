@@ -686,17 +686,12 @@ MonoBehaviour:
   - {fileID: 1495160432}
   - {fileID: 1419961740}
   - {fileID: 152458316}
-  testWindowContent: {fileID: 3703874751772333694, guid: bbd80906d1d6ae948923689528379615, type: 3}
+  border: {fileID: 2117744540}
+  worldMap: {fileID: 1872072237}
+  mainMenuWindowContent: {fileID: 8388116918934225382, guid: 47bbf5a47c44b434885bc4c2ebfb3db4, type: 3}
   battleWindowContent: {fileID: 737085656667512663, guid: 032424f7c2443c54fa8d582aef6e44fb, type: 3}
   doomsdayTimerWindowContent: {fileID: 7108659509303361347, guid: 4d3d724ca6a659b4ca543ee7efad6a86, type: 3}
   playerStatsWindowContent: {fileID: 1141968874612685756, guid: c1e4478ac57b7f04281bf2239630197a, type: 3}
-  testBattle: {fileID: 11400000, guid: 3c098362fa5cd3241a275cbc3ff1de8f, type: 2}
-  playerUnits:
-  - {fileID: 11400000, guid: bd3f0d6663c605e47b95a9c3e734579a, type: 2}
-  - {fileID: 11400000, guid: bd3f0d6663c605e47b95a9c3e734579a, type: 2}
-  - {fileID: 11400000, guid: bd3f0d6663c605e47b95a9c3e734579a, type: 2}
-  - {fileID: 11400000, guid: bd3f0d6663c605e47b95a9c3e734579a, type: 2}
-  - {fileID: 11400000, guid: bd3f0d6663c605e47b95a9c3e734579a, type: 2}
 --- !u!1 &1082272637
 GameObject:
   m_ObjectHideFlags: 0
