@@ -115,7 +115,7 @@ public class BattleUnit
     {
         if (isDead) { return; }
 
-        AttackTimer -= Time.deltaTime;
+        AttackTimer -= Time.deltaTime * GameManager.Instance.morale;
         OnBattleUnitAttackTimerChange?.Invoke(AttackTimer, baseUnit.speed);
 
         battleStratagem.Tick();

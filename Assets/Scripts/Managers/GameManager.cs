@@ -62,8 +62,6 @@ public class GameManager : MonoBehaviour
     {
         isGameStarted = true;
 
-        morale = 1.0f;
-
         WindowManager.Instance.CreateWindow("When the World Ends", testWindowContent, Vector2.zero);
         WindowManager.Instance.CreateWindow("Doomsday Clock", doomsdayTimerWindowContent, new Vector2(0, 80));
         WindowManager.Instance.CreateWindow("Stats", playerStatsWindowContent, new Vector2(-170, 100));

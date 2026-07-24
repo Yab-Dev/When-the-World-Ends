@@ -674,7 +674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doomsdayTimer: 250
-  morale: 1
+  morale: 2
   zones:
   - {fileID: 1095176032}
   - {fileID: 1810489249}
