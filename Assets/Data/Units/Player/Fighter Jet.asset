@@ -17,7 +17,7 @@ MonoBehaviour:
   targetsFlyingUnits: 1
   stratagem: {fileID: 11400000, guid: 31df119b554b1134281932c77a3119d0, type: 2}
   unitStrength: 4
-  icon: {fileID: 7482667652216324306, guid: f2ebf832e2b040f4ca148a5bc31be737, type: 3}
+  icon: {fileID: 6107552658158713905, guid: 2cf0f83428950cf4583e7dca5df3d135, type: 3}
   health: 20
   damage: 5
   speed: 1

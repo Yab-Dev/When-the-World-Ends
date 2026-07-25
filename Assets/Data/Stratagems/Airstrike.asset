@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Airstrike
   description: Deals moderate damage and increases unit attack charge.
-  icon: {fileID: 7482667652216324306, guid: f2ebf832e2b040f4ca148a5bc31be737, type: 3}
+  icon: {fileID: -4962497945370153834, guid: 5199d2291e6333c46b1e6f065de28bf5, type: 3}
   chargeMax: 200
   chargePerSecond: 10
   chargePerAttack: 8

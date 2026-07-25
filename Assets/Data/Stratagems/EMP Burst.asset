@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: EMP Burst
   description: Decreases the attack charge of the enemy.
-  icon: {fileID: 7482667652216324306, guid: f2ebf832e2b040f4ca148a5bc31be737, type: 3}
+  icon: {fileID: -1619661317985876587, guid: b1096ae3700c0b4409761235167ac518, type: 3}
   chargeMax: 100
   chargePerSecond: 5
   chargePerAttack: 15

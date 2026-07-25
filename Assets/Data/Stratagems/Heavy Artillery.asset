@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Heavy Artillery
   description: Deals massive damage.
-  icon: {fileID: 7482667652216324306, guid: f2ebf832e2b040f4ca148a5bc31be737, type: 3}
+  icon: {fileID: 6604042277519968234, guid: 05ccd4ddfd036114093d5b99adf5d57c, type: 3}
   chargeMax: 150
   chargePerSecond: 10
   chargePerAttack: 30
