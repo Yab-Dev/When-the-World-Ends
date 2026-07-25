@@ -1261,7 +1261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c620fe73fec13b34da51d9c9a5c32019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doomsdayTimer: 120
+  doomsdayTimer: 300
   survivedTime: 0
   morale: 1
   zones:

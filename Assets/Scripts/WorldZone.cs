@@ -81,7 +81,7 @@ public class WorldZone : MonoBehaviour, IPointerDownHandler
     {
         if (gameStarted)
         {
-            generationTimer += Time.deltaTime;
+            generationTimer += Time.deltaTime * ((100.0f + influence) / 100.0f);
             if (generationTimer >= generationLength)
             {
                 StationedUnits.Add(generatedUnit);
