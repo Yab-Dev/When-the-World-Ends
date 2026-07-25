@@ -85,27 +85,35 @@ public class BattleUnit
 
         if (flyingUnits.Count == 0 && nonFlyingUnits.Count == 0) { return target; }
 
-        if (baseUnit.targetsFlyingUnits)
+        try
         {
-            if (flyingUnits.Count == 0)
+            if (baseUnit.targetsFlyingUnits)
             {
-                target = nonFlyingUnits[Random.Range(0, flyingUnits.Count)];
+                if (flyingUnits.Count == 0)
+                {
+                    target = nonFlyingUnits[Random.Range(0, flyingUnits.Count)];
+                }
+                else
+                {
+                    target = flyingUnits[Random.Range(0, flyingUnits.Count)];
+                }
             }
             else
             {
-                target = flyingUnits[Random.Range(0, flyingUnits.Count)];
+                if (nonFlyingUnits.Count == 0)
+                {
+                    target = flyingUnits[Random.Range(0, flyingUnits.Count)];
+                }
+                else
+                {
+                    target = nonFlyingUnits[Random.Range(0, flyingUnits.Count)];
+                }
             }
+
         }
-        else
+        catch
         {
-            if (nonFlyingUnits.Count == 0)
-            {
-                target = flyingUnits[Random.Range(0, flyingUnits.Count)];
-            }
-            else
-            {
-                target = nonFlyingUnits[Random.Range(0, flyingUnits.Count)];
-            }
+            target = null;
         }
 
         return target;
