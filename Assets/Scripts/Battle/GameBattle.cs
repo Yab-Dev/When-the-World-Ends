@@ -112,6 +112,12 @@ public class GameBattle : MonoBehaviour, IWindowInteract
         {
             battleActive = false;
 
+            foreach (BattleUnit unit in playerUnits)
+            {
+                if (unit.isDead) { continue; }
+                zone.AddUnit(unit.baseUnit);
+            }
+
             winReward.RedeemReward(zone);
 
             OnGameBattleWin?.Invoke();

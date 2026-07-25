@@ -61,6 +61,23 @@ public class BattleEncounterSpawnerManager : MonoBehaviour
 
     private void SpawnBattleEncounter()
     {
-        
+        List<BattleEncounterLocation> allLocations = new List<BattleEncounterLocation>();
+        foreach (WorldZone zone in GameManager.Instance.zones)
+        {
+            foreach (GameObject location in zone.battleEncounterSpawnLocations)
+            {
+                allLocations.Add(location.GetComponent<BattleEncounterLocation>());
+            }
+        }
+        BattleEncounterLocation battleLocation = allLocations[Random.Range(0, allLocations.Count)];
+
+        MapBattleEncounter mapBattleEncounter = Instantiate(mapBattleEncounterObject, battleLocation.transform).GetComponent<MapBattleEncounter>();
+        mapBattleEncounter.zone = battleLocation.zone;
+        mapBattleEncounter.battleEvent = GetBattleEvent();
+    }
+
+    private BattleEvent GetBattleEvent()
+    {
+        return battleEvents[Random.Range(0, battleEvents.Count)];
     }
 }
