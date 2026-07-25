@@ -1261,7 +1261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c620fe73fec13b34da51d9c9a5c32019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doomsdayTimer: 90
+  doomsdayTimer: 120
   survivedTime: 0
   morale: 1
   zones:
@@ -1273,10 +1273,13 @@ MonoBehaviour:
   - {fileID: 152458316}
   border: {fileID: 2117744540}
   worldMap: {fileID: 1872072237}
+  windowParent: {fileID: 1669605037}
   mainMenuWindowContent: {fileID: 8388116918934225382, guid: 47bbf5a47c44b434885bc4c2ebfb3db4, type: 3}
   battleWindowContent: {fileID: 737085656667512663, guid: 032424f7c2443c54fa8d582aef6e44fb, type: 3}
   doomsdayTimerWindowContent: {fileID: 7108659509303361347, guid: 4d3d724ca6a659b4ca543ee7efad6a86, type: 3}
   playerStatsWindowContent: {fileID: 1141968874612685756, guid: c1e4478ac57b7f04281bf2239630197a, type: 3}
+  playerLoseAnimationWindow: {fileID: 5752445564550186751, guid: b8fdbe3d42f78384cac7494338bd8507, type: 3}
+  playerLoseMenuWindow: {fileID: 1116922904514283376, guid: 9b71a4b2db248cc49989a84ce72b7b2e, type: 3}
 --- !u!114 &686455718
 MonoBehaviour:
   m_ObjectHideFlags: 0
