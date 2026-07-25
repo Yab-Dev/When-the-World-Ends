@@ -12,7 +12,11 @@ public class BattleEncounterSpawnerManager : MonoBehaviour
     [SerializeField] private float lowTimeThreshhold;
     [SerializeField] private float lowTimeSpawnEncounterDelay;
     [SerializeField] private float finalMinuteSpawnEncounterDelay;
-    [SerializeField] private List<BattleEvent> battleEvents = new List<BattleEvent>();
+    [SerializeField] private List<BattleEvent> earlyGameBattleEvents = new List<BattleEvent>();
+    [SerializeField] private float midGameBattleEventStartTime;
+    [SerializeField] private List<BattleEvent> midGameBattleEvents = new List<BattleEvent>();
+    [SerializeField] private float lateGameBattleEventStartTime;
+    [SerializeField] private List<BattleEvent> lateGameBattleEvents = new List<BattleEvent>();
 
     [Header("Prefabs")]
     [SerializeField] private GameObject mapBattleEncounterObject;
@@ -78,6 +82,21 @@ public class BattleEncounterSpawnerManager : MonoBehaviour
 
     private BattleEvent GetBattleEvent()
     {
-        return battleEvents[Random.Range(0, battleEvents.Count)];
+        List<BattleEvent> setBattleEvents = new List<BattleEvent>();
+
+        if (GameManager.Instance.survivedTime >= lateGameBattleEventStartTime)
+        {
+            setBattleEvents = lateGameBattleEvents;
+        }
+        else if (GameManager.Instance.survivedTime >= midGameBattleEventStartTime)
+        {
+            setBattleEvents = midGameBattleEvents;
+        }
+        else
+        {
+            setBattleEvents = earlyGameBattleEvents;
+        }
+
+        return setBattleEvents[Random.Range(0, setBattleEvents.Count)];
     }
 }
