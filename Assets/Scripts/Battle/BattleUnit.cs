@@ -23,7 +23,7 @@ public class BattleUnit
     }
 
     private float attackTimer;
-    private float AttackTimer
+    public float AttackTimer
     {
         get
         {
@@ -83,7 +83,7 @@ public class BattleUnit
             }
         }
 
-        if (flyingUnits.Count == 0 &&  nonFlyingUnits.Count == 0) { return target; }
+        if (flyingUnits.Count == 0 && nonFlyingUnits.Count == 0) { return target; }
 
         if (baseUnit.targetsFlyingUnits)
         {

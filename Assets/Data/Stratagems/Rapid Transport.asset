@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9de374ce8965974e94348b765c5d41c, type: 3}
+  m_Name: Rapid Transport
+  m_EditorClassIdentifier: 
+  name: Rapid Transport
+  description: Increases the stratagem charge of all units.
+  icon: {fileID: 7482667652216324306, guid: f2ebf832e2b040f4ca148a5bc31be737, type: 3}
+  chargeMax: 100
+  chargePerSecond: 7
+  chargePerAttack: 8
+  chargeIncrease: 25

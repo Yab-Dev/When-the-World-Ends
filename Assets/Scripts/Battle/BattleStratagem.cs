@@ -10,7 +10,7 @@ public class BattleStratagem
     private GameBattle gameBattle;
 
     private float chargeAmount;
-    private float ChargeAmount
+    public float ChargeAmount
     {
         get
         {

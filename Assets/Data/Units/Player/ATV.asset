@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538ad67fd069fa34399362c8dd2ffa4a, type: 3}
+  m_Name: ATV
+  m_EditorClassIdentifier: 
+  name: Humvee
+  isFlyingUnit: 0
+  targetsFlyingUnits: 0
+  stratagem: {fileID: 11400000, guid: 05806599687a4244cbdcc8dcc7fe10ae, type: 2}
+  unitStrength: 1
+  icon: {fileID: 7482667652216324306, guid: f2ebf832e2b040f4ca148a5bc31be737, type: 3}
+  health: 15
+  damage: 4
+  speed: 1.8
