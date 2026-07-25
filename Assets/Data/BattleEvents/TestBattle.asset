@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyUnit: {fileID: 11400000, guid: c91b75e6fdf5a90449324ee10fb78bd8, type: 2}
   winReward:
-    timeReward: 45
+    timeReward: 35
     influenceReward: 5
     moraleReward: 0.02
     unitReward: []
   loseReward:
-    timeReward: -15
+    timeReward: 0
     influenceReward: -5
     moraleReward: -0.02
     unitReward: []

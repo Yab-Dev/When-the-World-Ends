@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Gameplay Data")]
     [SerializeField] public float doomsdayTimer;
+    [SerializeField] public float survivedTime;
     [SerializeField] public float morale;
     [SerializeField] public List<WorldZone> zones = new List<WorldZone>();
 
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject playerStatsWindowContent;
 
     private bool isGameStarted = false;
+    Coroutine timerCoroutine = null;
 
 
 
@@ -43,6 +45,23 @@ public class GameManager : MonoBehaviour
         if (isGameStarted)
         {
             doomsdayTimer -= Time.deltaTime;
+            survivedTime += Time.deltaTime;
+
+            if (doomsdayTimer < 60.0f)
+            {
+                if (timerCoroutine == null)
+                {
+                    timerCoroutine = StartCoroutine(TimerBeep());
+                }
+            }
+            else
+            {
+                if (timerCoroutine != null)
+                {
+                    StopCoroutine(timerCoroutine);
+                    timerCoroutine = null;
+                }
+            }
         }
     }
 
@@ -68,7 +87,11 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
 
         border.SetActive(true);
-        yield return new WaitForSeconds(1.0f);
+        SoundManager.Instance.PlaySFX(SoundManager.Instance.computerStartupSound);
+        yield return new WaitForSeconds(0.5f);
+
+        SoundManager.Instance.StartAmbience();
+        yield return new WaitForSeconds(0.5f);
 
         WindowManager.Instance.CreateWindow("When the World Ends", mainMenuWindowContent, Vector2.zero);
     }
@@ -78,10 +101,12 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
 
         WindowManager.Instance.CreateWindow("Stats", playerStatsWindowContent, new Vector2(-170, 100));
+        SoundManager.Instance.PlaySFX(SoundManager.Instance.beepSound);
         yield return new WaitForSeconds(1.0f);
 
         isGameStarted = true;
         WindowManager.Instance.CreateWindow("Doomsday Clock", doomsdayTimerWindowContent, new Vector2(150, 80));
+        SoundManager.Instance.PlaySFX(SoundManager.Instance.beepSound);
 
         foreach (WorldZone zone in zones)
         {
@@ -92,6 +117,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
 
         worldMap.SetActive(true);
+        SoundManager.Instance.PlaySFX(SoundManager.Instance.beepSound);
 
         yield return new WaitForSeconds(2.0f);
 
@@ -106,5 +132,15 @@ public class GameManager : MonoBehaviour
             total += zone.Influence;
         }
         return total;
+    }
+
+    private IEnumerator TimerBeep()
+    {
+        while (doomsdayTimer < 60.0f)
+        {
+            SoundManager.Instance.PlaySFX(SoundManager.Instance.beepSound);
+
+            yield return new WaitForSeconds(1.0f);
+        }
     }
 }
