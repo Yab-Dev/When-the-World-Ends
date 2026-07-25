@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Burst Fire
   description: Deals light damage.
-  icon: {fileID: 7482667652216324306, guid: f2ebf832e2b040f4ca148a5bc31be737, type: 3}
+  icon: {fileID: -4971973145111266187, guid: 3acbf692ca983c6419260a7d4f0b53c6, type: 3}
   chargeMax: 100
   chargePerSecond: 10
   chargePerAttack: 10

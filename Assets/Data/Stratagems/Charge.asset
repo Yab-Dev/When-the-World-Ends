@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Charge
   description: Increases the attack charge of all units.
-  icon: {fileID: 7482667652216324306, guid: f2ebf832e2b040f4ca148a5bc31be737, type: 3}
+  icon: {fileID: -2127032510076026057, guid: c12c8814e444d234bb069556e5bf2cd5, type: 3}
   chargeMax: 100
   chargePerSecond: 8
   chargePerAttack: 20

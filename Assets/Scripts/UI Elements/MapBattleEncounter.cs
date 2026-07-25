@@ -23,6 +23,10 @@ public class MapBattleEncounter : MonoBehaviour, IPointerDownHandler
 
     private void SelfDestruct()
     {
-        Destroy(gameObject);
+        try
+        {
+            Destroy(gameObject);
+        }
+        catch { }
     }
 }

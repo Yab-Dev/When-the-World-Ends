@@ -84,7 +84,7 @@ public class WorldZone : MonoBehaviour, IPointerDownHandler
             generationTimer += Time.deltaTime * ((100.0f + influence) / 100.0f);
             if (generationTimer >= generationLength)
             {
-                StationedUnits.Add(generatedUnit);
+                AddUnit(generatedUnit);
                 generationTimer = 0;
             }
             OnWorldZoneUnitLoadUpdate?.Invoke(generationTimer, generationLength);

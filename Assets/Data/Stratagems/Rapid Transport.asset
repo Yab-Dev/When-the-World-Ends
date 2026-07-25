@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Rapid Transport
   description: Increases the stratagem charge of all units.
-  icon: {fileID: 7482667652216324306, guid: f2ebf832e2b040f4ca148a5bc31be737, type: 3}
+  icon: {fileID: 7461094691079550611, guid: 0cc0f4a4ce1679a47b0c3227e2b4830d, type: 3}
   chargeMax: 100
   chargePerSecond: 7
   chargePerAttack: 8
