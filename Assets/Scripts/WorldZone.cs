@@ -58,6 +58,8 @@ public class WorldZone : MonoBehaviour, IPointerDownHandler
     public delegate void WorldZoneUnitLoadUpdate(float _value, float _maxValue);
     public event WorldZoneUnitLoadUpdate OnWorldZoneUnitLoadUpdate;
 
+    public static event TutorialManager.TutorialNotify OnWorldZoneClicked;
+
 
 
     private void Awake()
@@ -69,6 +71,8 @@ public class WorldZone : MonoBehaviour, IPointerDownHandler
     {
         Window window = WindowManager.Instance.CreateWindow(zoneName, worldZoneInfoWindow, new Vector2(-130, -30));
         window.GetWindowContent().GetComponent<WorldZoneInfoWindow>().InitializeUI(this);
+
+        OnWorldZoneClicked?.Invoke();
     }
 
     public void StartGame()

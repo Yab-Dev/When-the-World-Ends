@@ -11,6 +11,8 @@ public class MapBattleEncounter : MonoBehaviour, IPointerDownHandler
     [Header("Prefabs")]
     [SerializeField] private GameObject battleStartWindow;
 
+    public static event TutorialManager.TutorialNotify OnEncounterClicked;
+
 
 
     public void OnPointerDown(PointerEventData eventData)
@@ -19,6 +21,7 @@ public class MapBattleEncounter : MonoBehaviour, IPointerDownHandler
         BattleStartWindow battleWindow = window.GetWindowContent().GetComponent<BattleStartWindow>();
         battleWindow.InitializeUI(zone, battleEvent);
         battleWindow.OnBattleStart += SelfDestruct;
+        OnEncounterClicked?.Invoke();
     }
 
     private void SelfDestruct()

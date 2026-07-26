@@ -15,6 +15,8 @@ public class UnitTransferWindow : MonoBehaviour, IWindowInteract
     private WorldZone destination;
     private bool isLoading;
 
+    public static event TutorialManager.TutorialNotify OnTroopTransferComplete;
+
 
 
     public void BeginLoadingBar(List<Unit> _transferringUnits, WorldZone _destination, float _timePerUnit)
@@ -39,6 +41,7 @@ public class UnitTransferWindow : MonoBehaviour, IWindowInteract
                 {
                     destination.AddUnit(unit);
                 }
+                OnTroopTransferComplete?.Invoke();
                 windowScript.CloseWindow();
             }
         }

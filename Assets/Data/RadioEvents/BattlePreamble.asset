@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b5d57967b0e5404a8749fa2026a059d, type: 3}
+  m_Name: BattlePreamble
+  m_EditorClassIdentifier: 
+  hasSkipButton: 0
+  textBoxes:
+  - message: As you can see, transferring units takes time, so be smart about where
+      you keep them positioned. AI targets can appear anywhere.
+    buttonText: Ok
+  - message: Now transfer units so that there are at least 5 in the continent with
+      the AI target. Once there are, select your units then fight the target!
+    buttonText: 

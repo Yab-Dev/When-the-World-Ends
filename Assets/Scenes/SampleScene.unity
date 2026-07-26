@@ -1330,6 +1330,7 @@ GameObject:
   - component: {fileID: 686455716}
   - component: {fileID: 686455718}
   - component: {fileID: 686455720}
+  - component: {fileID: 686455721}
   - component: {fileID: 686455719}
   m_Layer: 0
   m_Name: GameManager
@@ -1367,6 +1368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windowObject: {fileID: 427071680435684380, guid: 36268a9b9d4476545bd8912d5d102539, type: 3}
   rewardsWindow: {fileID: 8399525922432544628, guid: 1d3ae92a2192f0c499aa4ae1f497e730, type: 3}
+  radioWindow: {fileID: 8897598643048190278, guid: 934dc511193d99f42ad7a88c582e035f, type: 3}
 --- !u!114 &686455717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1543,6 +1545,24 @@ MonoBehaviour:
   mouseClickSound: {fileID: 8300000, guid: 8edf845b92b421d488e0825e5cf69f41, type: 3}
   errorSound: {fileID: 8300000, guid: a7c1b22498bbe5d428be59ef66453ac4, type: 3}
   beepSound: {fileID: 8300000, guid: 802db478843a4c84a95b01c309d7494e, type: 3}
+--- !u!114 &686455721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686455714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f74be792486144f894fcaa0f0cd533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  introRadioEvent: {fileID: 11400000, guid: c0ed0237d41f5a645b01a5f6b0436d94, type: 2}
+  battleScreenOverviewRadioEvent: {fileID: 11400000, guid: 3cb5f8e49ea9b7e48b4ecb1b91940cdb, type: 2}
+  worldScreenOverviewRadioEvent: {fileID: 11400000, guid: 24f9f925a2e6b0c449f979ac04838f2a, type: 2}
+  battlePreambleRadioEvent: {fileID: 11400000, guid: 3b68af0cf5b49084581450afe43de40b, type: 2}
+  battleRadioEvent: {fileID: 11400000, guid: 9121fd4271b83944f8b391a00c64b38c, type: 2}
+  outroRadioEvent: {fileID: 11400000, guid: 6164bec1c38265647bc37a9117af21e0, type: 2}
 --- !u!1 &700745372
 GameObject:
   m_ObjectHideFlags: 0

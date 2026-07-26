@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
 
     public void StartBattle(BattleEvent _battleEvent, List<Unit> _playerUnits, WorldZone _zone)
     {
-        Window battleWindow = WindowManager.Instance.CreateWindow("Battle Network", battleWindowContent, Vector2.zero);
+        Window battleWindow = WindowManager.Instance.CreateWindow("Battle Network", battleWindowContent, new Vector2(0, 35));
         GameBattle gameBattle = battleWindow.GetWindowContent().GetComponent<GameBattle>();
 
         gameBattle.SetEnemyUnit(_battleEvent.enemyUnit);
@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(2.0f);
 
-        // Start of game radio event
+        TutorialManager.Instance.StartTutorial();
     }
 
     public int GetTotalInfluence()

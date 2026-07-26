@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b5d57967b0e5404a8749fa2026a059d, type: 3}
+  m_Name: BattleTutorial
+  m_EditorClassIdentifier: 
+  hasSkipButton: 0
+  textBoxes:
+  - message: In battle, your units and the enemy will attack each other automatically.
+      Your units will also charge up a stratagem, a powerful ability. Click on the
+      stratagem once it's full to use it. You'll need to in order to win!
+    buttonText: 

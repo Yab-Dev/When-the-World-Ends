@@ -21,6 +21,9 @@ public class GameBattle : MonoBehaviour, IWindowInteract
     public event GameBattleUpdate OnGameBattleWin;
     public event GameBattleUpdate OnGameBattleLose;
 
+    public static event TutorialManager.TutorialNotify OnBattleStarted;
+    public static event TutorialManager.TutorialNotify OnBattleEnded;
+
 
 
     private void Awake()
@@ -88,6 +91,7 @@ public class GameBattle : MonoBehaviour, IWindowInteract
         }
 
         battleActive = true;
+        OnBattleStarted?.Invoke();
     }
 
     public List<BattleUnit> GetTargetList(bool _isEnemy)
@@ -121,6 +125,7 @@ public class GameBattle : MonoBehaviour, IWindowInteract
             winReward.RedeemReward(zone);
 
             OnGameBattleWin?.Invoke();
+            OnBattleEnded?.Invoke();
         }
     }
 
@@ -136,6 +141,7 @@ public class GameBattle : MonoBehaviour, IWindowInteract
         loseReward.RedeemReward(zone);
 
         OnGameBattleLose?.Invoke();
+        OnBattleEnded?.Invoke();
     }
 
     public void SetWindowScript(Window _windowScript)
