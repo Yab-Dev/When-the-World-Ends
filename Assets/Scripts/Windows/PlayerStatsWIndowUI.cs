@@ -12,7 +12,7 @@ public class PlayerStatsWIndowUI : MonoBehaviour
 
     private void Update()
     {
-        moraleText.text = $"Troop Morale: {GameManager.Instance.morale * 100}%";
+        moraleText.text = $"Troop Morale: {Mathf.RoundToInt(GameManager.Instance.morale * 100)}%";
         totalInfluenceText.text = $"Total Influence: {GameManager.Instance.GetTotalInfluence()}";
     }
 }

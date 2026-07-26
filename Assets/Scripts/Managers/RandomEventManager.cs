@@ -29,7 +29,7 @@ public class RandomEventManager : MonoBehaviour
 
     private void Update()
     {
-        if (isStarted)
+        if (isStarted && GameManager.Instance.doomsdayTimer > 0.0f)
         {
             eventTimer -= Time.deltaTime * ((GameManager.Instance.GetTotalInfluence() + 100.0f) / 100.0f);
             if (eventTimer <= 0.0f)
