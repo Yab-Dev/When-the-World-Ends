@@ -91,7 +91,7 @@ public class BattleUnit
             {
                 if (flyingUnits.Count == 0)
                 {
-                    target = nonFlyingUnits[Random.Range(0, flyingUnits.Count)];
+                    target = nonFlyingUnits[Random.Range(0, nonFlyingUnits.Count)];
                 }
                 else
                 {
@@ -106,14 +106,16 @@ public class BattleUnit
                 }
                 else
                 {
-                    target = nonFlyingUnits[Random.Range(0, flyingUnits.Count)];
+                    target = nonFlyingUnits[Random.Range(0, nonFlyingUnits.Count)];
                 }
             }
 
         }
         catch
         {
-            target = null;
+            Debug.Log($"CANNOT FIND TARGET FOR SOME REASON: ENEMY:{isEnemy}, TARGETS:{baseUnit.targetsFlyingUnits}");
+            Debug.Log($"Flying targets: {flyingUnits.Count}");
+            Debug.Log($"Non Flying targets: {nonFlyingUnits.Count}");
         }
 
         return target;

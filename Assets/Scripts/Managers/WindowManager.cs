@@ -10,6 +10,7 @@ public class WindowManager : MonoBehaviour
     [SerializeField] private GameObject windowObject;
     [SerializeField] private GameObject rewardsWindow;
     [SerializeField] private GameObject radioWindow;
+    [SerializeField] private GameObject choiceEventWindow;
 
     private RectTransform windowsParent;
 
@@ -49,6 +50,15 @@ public class WindowManager : MonoBehaviour
         Window newWindow = CreateWindow(_windowName, radioWindow, _position);
 
         newWindow.GetWindowContent().GetComponent<RadioEventWindow>().StartRadio(_radioEvent);
+
+        return newWindow;
+    }
+
+    public Window CreateChoiceEventWindow(string _windowName, Vector2 _position, ChoiceEvent _choiceEvent, WorldZone _zone)
+    {
+        Window newWindow = CreateWindow(_windowName, choiceEventWindow, _position);
+
+        newWindow.GetWindowContent().GetComponent<ChoiceEventWindow>().DisplayChoice(_choiceEvent, _zone);
 
         return newWindow;
     }

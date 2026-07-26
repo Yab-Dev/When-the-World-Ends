@@ -146,7 +146,7 @@ public class GameManager : MonoBehaviour
 
     public void TutorialOver()
     {
-        Debug.Log("OVERRR");
+        RandomEventManager.Instance.StartRandomEvents();
     }
 
     private IEnumerator TimerBeep()

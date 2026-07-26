@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4972c0b783af54a9922f42fed6fd74, type: 3}
+  m_Name: HumveeScout
+  m_EditorClassIdentifier: 
+  isUnique: 0
+  description: Two humvees were salvaged from a battle. Should we use one to scout
+    ahead or add them both to our cause?
+  choices:
+  - label: Scout
+    reward:
+      timeReward: 0
+      influenceReward: 15
+      moraleReward: 0
+      unitReward:
+      - {fileID: 11400000, guid: 7625d6562fff6f448baf5f3cdb8c7497, type: 2}
+    replacesGeneratedUnit: 0
+    replacementUnit: {fileID: 0}
+  - label: Take Both
+    reward:
+      timeReward: 0
+      influenceReward: 0
+      moraleReward: 0
+      unitReward:
+      - {fileID: 11400000, guid: 7625d6562fff6f448baf5f3cdb8c7497, type: 2}
+      - {fileID: 11400000, guid: 7625d6562fff6f448baf5f3cdb8c7497, type: 2}
+    replacesGeneratedUnit: 0
+    replacementUnit: {fileID: 0}
+  blackListZones: []

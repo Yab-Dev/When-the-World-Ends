@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4972c0b783af54a9922f42fed6fd74, type: 3}
+  m_Name: SaveTroops
+  m_EditorClassIdentifier: 
+  isUnique: 0
+  description: A few of our new recuits are trapped behind enemy lines. Should we
+    leave them there to keep the enemy distracted, or extract them but lose some
+    ground?
+  choices:
+  - label: Leave
+    reward:
+      timeReward: 10
+      influenceReward: 10
+      moraleReward: -0.05
+      unitReward: []
+    replacesGeneratedUnit: 0
+    replacementUnit: {fileID: 0}
+  - label: Extract
+    reward:
+      timeReward: 0
+      influenceReward: -10
+      moraleReward: 0.01
+      unitReward:
+      - {fileID: 11400000, guid: bd3f0d6663c605e47b95a9c3e734579a, type: 2}
+      - {fileID: 11400000, guid: bd3f0d6663c605e47b95a9c3e734579a, type: 2}
+    replacesGeneratedUnit: 0
+    replacementUnit: {fileID: 0}
+  blackListZones: []

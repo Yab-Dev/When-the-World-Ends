@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4972c0b783af54a9922f42fed6fd74, type: 3}
+  m_Name: CommandoUpgrade
+  m_EditorClassIdentifier: 
+  isUnique: 1
+  description: Training for commando units can potentially begin in this region.
+    They are equipped with high power EMPs to stun AI targets. They don't get along
+    with other units well though.
+  choices:
+  - label: Train
+    reward:
+      timeReward: 0
+      influenceReward: 0
+      moraleReward: -0.15
+      unitReward:
+      - {fileID: 11400000, guid: 36a0c862fac37e04ea1f9f7d2130c7bb, type: 2}
+    replacesGeneratedUnit: 1
+    replacementUnit: {fileID: 11400000, guid: 36a0c862fac37e04ea1f9f7d2130c7bb, type: 2}
+  - label: Do Not
+    reward:
+      timeReward: 0
+      influenceReward: 0
+      moraleReward: 0.15
+      unitReward: []
+    replacesGeneratedUnit: 0
+    replacementUnit: {fileID: 0}
+  blackListZones:
+  - SouthAmerica
+  - Africa
+  - Australia
