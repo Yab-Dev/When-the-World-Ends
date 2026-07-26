@@ -144,6 +144,11 @@ public class GameManager : MonoBehaviour
         return total;
     }
 
+    public void TutorialOver()
+    {
+        Debug.Log("OVERRR");
+    }
+
     private IEnumerator TimerBeep()
     {
         while (doomsdayTimer < 60.0f)

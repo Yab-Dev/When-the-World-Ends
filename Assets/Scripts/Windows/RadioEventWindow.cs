@@ -10,6 +10,7 @@ public class RadioEventWindow : MonoBehaviour, IWindowInteract
     [SerializeField] private Button nextButton;
     [SerializeField] private TMPro.TMP_Text nextButtonText;
     [SerializeField] private Button skipButton;
+    [SerializeField] private AudioSource radioStaticSource;
 
     private int textBoxIndex;
     private Window windowScript;
@@ -45,6 +46,7 @@ public class RadioEventWindow : MonoBehaviour, IWindowInteract
         nextButton.gameObject.SetActive(false);
 
         messageText.text = "";
+        radioStaticSource.Play();
 
         foreach (char character in _textBox.message)
         {
@@ -58,6 +60,8 @@ public class RadioEventWindow : MonoBehaviour, IWindowInteract
             nextButton.onClick.AddListener(NextTextBox);
             nextButtonText.text = _textBox.buttonText;
         }
+
+        radioStaticSource.Stop();
 
         if (textBoxIndex == radioEvent.textBoxes.Count -1)
         {

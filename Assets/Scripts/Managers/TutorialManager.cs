@@ -36,19 +36,21 @@ public class TutorialManager : MonoBehaviour
     public void SkipTutorial()
     {
         currentWindow.OnRadioEventComplete -= WaitForBattleEventClick;
+        MapBattleEncounter.OnEncounterClicked -= BattleScreenOverviewTutorial;
         currentWindow.CloseWindow();
+        GameManager.Instance.TutorialOver();
     }
 
     private void WaitForBattleEventClick()
     {
         currentWindow.OnRadioEventComplete -= WaitForBattleEventClick;
-        currentWindow.OnSkipButtonPressed -= SkipTutorial;
         MapBattleEncounter.OnEncounterClicked += BattleScreenOverviewTutorial;
     }
 
     private void BattleScreenOverviewTutorial()
     {
         MapBattleEncounter.OnEncounterClicked -= BattleScreenOverviewTutorial;
+        currentWindow.OnSkipButtonPressed -= SkipTutorial;
         currentWindow.CloseWindow();
 
         RadioEventWindow window = battleScreenOverviewRadioEvent.StartRadio();
@@ -117,5 +119,11 @@ public class TutorialManager : MonoBehaviour
 
         RadioEventWindow window = outroRadioEvent.StartRadio();
         currentWindow = window;
+        currentWindow.OnRadioEventComplete += TutorialOver;
+    }
+
+    private void TutorialOver()
+    {
+        GameManager.Instance.TutorialOver();
     }
 }
