@@ -7,7 +7,11 @@ public class MainMenuWindow : MonoBehaviour, IWindowInteract
 {
     [Header("Cache")]
     [SerializeField] private Button beginGameButton;
+    [SerializeField] private Button creditsButton;
     [SerializeField] private Button endGameButton;
+
+    [Header("Prefabs")]
+    [SerializeField] private GameObject creditsWindow;
 
     private Window windowScript;
 
@@ -19,6 +23,10 @@ public class MainMenuWindow : MonoBehaviour, IWindowInteract
         { 
             GameManager.Instance.StartCoroutine(GameManager.Instance.StartGame()); 
             windowScript.CloseWindow();
+        });
+        creditsButton.onClick.AddListener(() =>
+        {
+            WindowManager.Instance.CreateWindow("Credits", creditsWindow, new Vector2(120, -30));
         });
         endGameButton.onClick.AddListener(() => 
         {
