@@ -20,9 +20,9 @@ Click on the title of a window to move it, click on a black dot to open the cont
 Gameplay and systems programmer, game balance, partial game design
 
 ## My contributions
-- Data driven Unit, Event, and Stratagems using ScriptableObjects
+- Data driven unit, event, and stratagems using ScriptableObjects
 - Modular window system using parenting and content size fitters
 - Event-based UI and tutorial communication from gameplay objects
 - Automatic combat, unit and enemy targeting
-- Modular World zone and battle systems
+- Modular world zone and battle systems
 - CRT effect using shader and Unity post-processing
