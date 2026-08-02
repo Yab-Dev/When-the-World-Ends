@@ -17,7 +17,7 @@ When the World Ends is a real-time strategy game where you are fighting against 
 Click on the title of a window to move it, click on a black dot to open the continent menu, and click on an orange dot to open the battle menu.
 
 ## My Role
-Gameplay and systems programmer, game balance, partial game design
+Developed as a two-person team. My responsibilities were as the gameplay and systems programmer, game balance, and partial game design
 
 ## My contributions
 - Data driven unit, event, and stratagems using ScriptableObjects
