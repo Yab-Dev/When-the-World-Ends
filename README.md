@@ -2,9 +2,6 @@
 
 A frantic real-time strategy game made in 4 days for the 2026 GMTK Game Jam
 
-## Play
-https://yabdev.itch.io/when-the-world-ends
-
 ## Tools used
 Unity, Audacity, Aseprite
 
